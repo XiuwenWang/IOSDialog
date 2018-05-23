@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="btn_text_color">#1483fd</color>
+    <color name="btn_s">#e6e6e7</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!--线条颜色-->
+    <color name="partingLineColor">#E5E5E5</color>
+    <color name="divilinecolor">#B2B2B2</color>
+
+
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_boot"
+              android:layout_width="270dp"
+              android:layout_height="wrap_content"
+              android:background="@drawable/shape_alert_dialog"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_content_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="提示"/>
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:text=""/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/partingLine_h"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/partingLineColor"/>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <TextView
+            android:id="@+id/tv_Negative"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/btn_text_color"
+            android:textSize="16sp"
+            android:background="@drawable/selector_btn_left"
+            android:clickable="true"
+            android:visibility="visible"/>
+
+        <View
+            android:id="@+id/partingLine"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/partingLineColor"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tv_Positive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:text="确定"
+            android:textColor="@color/btn_text_color"
+            android:background="@drawable/selector_btn_right"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</LinearLayout>

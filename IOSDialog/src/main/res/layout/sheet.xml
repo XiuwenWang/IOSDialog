@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_boot"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#00ffffff"
+              android:orientation="vertical"
+              android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_alert_dialog"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:text="退出淘宝账号后,当前小号信息将隐藏"
+            android:textSize="12sp"/>
+
+        <View
+            android:id="@+id/partingLine_h"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/partingLineColor"
+            android:visibility="gone"/>
+
+
+        <LinearLayout
+            android:id="@+id/ll_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_Negative"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/shape_alert_dialog"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/btn_text_color"
+        android:textSize="16sp"/>
+</LinearLayout>
