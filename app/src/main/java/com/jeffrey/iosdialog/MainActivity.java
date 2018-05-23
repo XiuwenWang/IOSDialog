@@ -1,5 +1,6 @@
 package com.jeffrey.iosdialog;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -28,21 +29,19 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "确定", Toast.LENGTH_SHORT).show();
                             }
                         })
-                        .setNegativeButton("取消", new IOSAlert.OnClickListener() {
-                            @Override
-                            public void onClick(IOSAlert dialog) {
-                                Toast.makeText(MainActivity.this, "取消", Toast.LENGTH_SHORT).show();
-                            }
-                        })
+                        .setNegativeButton("取消")
                         .show();
                 break;
             case R.id.btn_IOSSheet:
                 new IOSSheet.Builder(this)
                         .setTitle("标题")
-                        .addSheetItem(new String[]{"1", "2", "3"}, new IOSSheet.OnItemClickListener() {
+                        .addSheetItem("0")
+                        .addSheetItem(new String[]{"1", "2", "3"})
+                        .addSheetItem("5", Color.RED,15)
+                        .setOnItemClickListener(new IOSSheet.OnItemClickListener() {
                             @Override
                             public void onClick(int position, IOSSheet dialog) {
-                                Toast.makeText(MainActivity.this, position + "", Toast.LENGTH_SHORT).show();
+                                //Item 点击回调
                             }
                         })
                         .setNegativeButton("取消")
