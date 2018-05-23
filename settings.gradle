@@ -1,1 +1,1 @@
-include ':app', ':IOSDialog'
+include ':app', ':IOSDialog' 
