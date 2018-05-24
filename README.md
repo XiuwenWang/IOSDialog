@@ -1,3 +1,19 @@
+- ### 	[![](https://jitpack.io/v/XiuwenWang/IOSDialog.svg)](https://jitpack.io/#XiuwenWang/IOSDialog)
+ Step 1. Add the JitPack repository to your build file
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+ ```
+ Step 2. Add the dependency
+```
+dependencies {
+	        implementation 'com.github.XiuwenWang:IOSDialog:V1.0.0'
+	}
+```
 # IOSDialog（仿IOS样式）
 > - ### IOSAlert（屏幕中间显示的对话框）
  使用方法（可修改文字样式，可自定义消息内容（传View））
