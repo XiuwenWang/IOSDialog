@@ -26,10 +26,12 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("确定", new IOSAlert.OnClickListener() {
                             @Override
                             public void onClick(IOSAlert dialog) {
+                                dialog.dismiss();
                                 Toast.makeText(MainActivity.this, "确定", Toast.LENGTH_SHORT).show();
                             }
                         })
                         .setNegativeButton("取消")
+                        .setAutoDismiss(false)
                         .show();
                 break;
             case R.id.btn_IOSSheet:
@@ -42,9 +44,11 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(int position, IOSSheet dialog) {
                                 //Item 点击回调
+                                dialog.dismiss();
                             }
                         })
                         .setNegativeButton("取消")
+                        .setAutoDismiss(false)
                         .show();
                 break;
         }

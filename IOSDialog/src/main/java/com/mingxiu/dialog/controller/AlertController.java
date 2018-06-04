@@ -61,7 +61,7 @@ public class AlertController {
         mIosAlert.getmContentView().addView(mContentView);
     }
 
-    private void setNegativeButton(CharSequence mNegativeButtonText, int mNegativeButtonTextColor, final IOSAlert.OnClickListener mNegativeButtonListener) {
+    private void setNegativeButton(final boolean isAutoDismiss, CharSequence mNegativeButtonText, int mNegativeButtonTextColor, final IOSAlert.OnClickListener mNegativeButtonListener) {
         if (mNegativeButtonText != null) {
             mIosAlert.getmTvNegative().setText(mNegativeButtonText);
         }
@@ -72,7 +72,9 @@ public class AlertController {
         mIosAlert.getmTvNegative().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mIosAlert.dismiss();
+                if (isAutoDismiss) {
+                    mIosAlert.dismiss();
+                }
                 if (mNegativeButtonListener != null) {
                     mNegativeButtonListener.onClick(mIosAlert);
                 }
@@ -80,7 +82,7 @@ public class AlertController {
         });
     }
 
-    private void setPositiveButton(CharSequence mPositiveButtonText, int mPositiveButtonTextColor, final IOSAlert.OnClickListener mPositiveButtonListener) {
+    private void setPositiveButton(final boolean isAutoDismiss, CharSequence mPositiveButtonText, int mPositiveButtonTextColor, final IOSAlert.OnClickListener mPositiveButtonListener) {
         if (mPositiveButtonText != null) {
             mIosAlert.getmTvPosittive().setText(mPositiveButtonText);
         }
@@ -91,7 +93,9 @@ public class AlertController {
         mIosAlert.getmTvPosittive().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mIosAlert.dismiss();
+                if (isAutoDismiss) {
+                    mIosAlert.dismiss();
+                }
                 if (mPositiveButtonListener != null) {
                     mPositiveButtonListener.onClick(mIosAlert);
                 }
@@ -224,6 +228,7 @@ public class AlertController {
         public boolean mNegativeButtonVisibility = false;
 
         public boolean mCancelable = true;
+        public boolean isAutoDismiss = true;
         public View mContentView;
         public int mViewLayoutResId;
         public boolean mViewSpacingSpecified;
@@ -281,10 +286,10 @@ public class AlertController {
             }
             dialog.setMessageVisibility(mMessageVisibility);
 
-            dialog.setNegativeButton(mNegativeButtonText, mNegativeButtonTextColor, mNegativeButtonListener);
+            dialog.setNegativeButton(isAutoDismiss,mNegativeButtonText, mNegativeButtonTextColor, mNegativeButtonListener);
             dialog.setNegativeButtonVisibility(mNegativeButtonVisibility);
             dialog.setNegativeButtonTextSize(mNegativeButtonTextSize);
-            dialog.setPositiveButton(mPositiveButtonText, mPositiveButtonTextColor, mPositiveButtonListener);
+            dialog.setPositiveButton(isAutoDismiss,mPositiveButtonText, mPositiveButtonTextColor, mPositiveButtonListener);
             dialog.setPositiveButtonVisibility(mPositiveButtonVisibility);
             dialog.setPositiveButtonTextSize(mPositiveButtonTextSize);
 

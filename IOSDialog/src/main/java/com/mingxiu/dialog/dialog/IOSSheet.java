@@ -134,6 +134,11 @@ public class IOSSheet extends BaseDialog {
             return P.mContext;
         }
 
+        public Builder setAutoDismiss(boolean isAutoDismiss) {
+            P.isAutoDismiss = isAutoDismiss;
+            return this;
+        }
+
         public Builder setPaddingLeftRight(int dp) {
             P.mPaddingLeftRight = dp;
             return this;
@@ -184,6 +189,7 @@ public class IOSSheet extends BaseDialog {
             P.mDataView.addAll(viewList);
             return this;
         }
+
         public Builder addSheetItem(View view) {
             P.mDataView.add(view);
             return this;

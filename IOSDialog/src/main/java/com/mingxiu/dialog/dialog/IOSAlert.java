@@ -179,6 +179,11 @@ public class IOSAlert extends BaseDialog {
             return context;
         }
 
+        public Builder setAutoDismiss(boolean isAutoDismiss) {
+            P.isAutoDismiss = isAutoDismiss;
+            return this;
+        }
+
         /**
          * setTitle
          *
@@ -195,6 +200,7 @@ public class IOSAlert extends BaseDialog {
             P.mTitle = P.mContext.getText(titleId);
             return this;
         }
+
         private Builder setTitleColor(@ColorInt int color) {
             P.mTitleTextColor = color;
             return this;
@@ -250,10 +256,12 @@ public class IOSAlert extends BaseDialog {
             P.mMessage = P.mContext.getText(messageId);
             return this;
         }
+
         private Builder setMessageColor(@ColorInt int color) {
             P.mMessageTextColor = color;
             return this;
         }
+
         public Builder setMessage(float size) {
             P.mMessageTextSize = size;
             return this;
@@ -379,12 +387,12 @@ public class IOSAlert extends BaseDialog {
             return this;
         }
 
-        public Builder setNegativeButton(@StringRes int textId,  @ColorInt int color) {
+        public Builder setNegativeButton(@StringRes int textId, @ColorInt int color) {
             P.mNegativeButtonTextColor = color;
             return setNegativeButton(textId);
         }
 
-        public Builder setNegativeButton(CharSequence text,  @ColorInt int color) {
+        public Builder setNegativeButton(CharSequence text, @ColorInt int color) {
             P.mNegativeButtonTextColor = color;
             return setNegativeButton(text);
         }

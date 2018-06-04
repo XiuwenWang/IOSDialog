@@ -77,7 +77,7 @@ public class SheetController {
         }
     }
 
-    private void setNegativeButton(CharSequence mNegativeButtonText, int mNegativeButtonTextColor, final IOSSheet.OnClickListener mNegativeButtonListener) {
+    private void setNegativeButton(final boolean isAutoDismiss, CharSequence mNegativeButtonText, int mNegativeButtonTextColor, final IOSSheet.OnClickListener mNegativeButtonListener) {
         if (mNegativeButtonText != null) {
             mIosSheet.getmTvNegative().setText(mNegativeButtonText);
         }
@@ -88,7 +88,9 @@ public class SheetController {
         mIosSheet.getmTvNegative().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mIosSheet.dismiss();
+                if (isAutoDismiss) {
+                    mIosSheet.dismiss();
+                }
                 if (mNegativeButtonListener != null) {
                     mNegativeButtonListener.onClick(mIosSheet);
                 }
@@ -197,6 +199,7 @@ public class SheetController {
         public int mViewLayoutResId;
         public int mPaddingLeftRight = 8;
         public int mPaddingBottom = 8;
+        public boolean isAutoDismiss = true;
 
         public SheetParams(Activity mContext) {
             this.mContext = mContext;
@@ -222,10 +225,10 @@ public class SheetController {
             dialog.setTitleVisibility(mTitleVisibility);
 
             if (mData != null && mData.size() > 0) {
-                dialog.setData(mData, mOnItemClickListener, mBackground_s, mBackground, mCornerRadius, mTitleVisibility);
+                dialog.setData(isAutoDismiss,mData, mOnItemClickListener, mBackground_s, mBackground, mCornerRadius, mTitleVisibility);
             }
 
-            dialog.setNegativeButton(mNegativeButtonText, mNegativeButtonTextColor, mNegativeButtonListener);
+            dialog.setNegativeButton(isAutoDismiss,mNegativeButtonText, mNegativeButtonTextColor, mNegativeButtonListener);
             dialog.setNegativeButtonVisibility(mNegativeButtonVisibility);
             dialog.setNegativeButtonTextSize(mNegativeButtonTextSize);
 
@@ -275,7 +278,7 @@ public class SheetController {
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    private void setData(final ArrayList<SheetItemParams> mData, final IOSSheet.OnItemClickListener mOnItemClickListener, final int pressColor, final int normalColor, final float mCornerRadius, final boolean mTitleVisibility) {
+    private void setData(final boolean isAutoDismiss, final ArrayList<SheetItemParams> mData, final IOSSheet.OnItemClickListener mOnItemClickListener, final int pressColor, final int normalColor, final float mCornerRadius, final boolean mTitleVisibility) {
         final LinearLayout llList = mIosSheet.getmLlList();
         for (int i = 0; i < mData.size(); i++) {
             SheetItemParams sheetItem = mData.get(i);
@@ -402,7 +405,9 @@ public class SheetController {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mIosSheet.dismiss();
+                    if(isAutoDismiss){
+                        mIosSheet.dismiss();
+                    }
                     IOSSheet.OnClickListener listener = mData.get((Integer) view.getTag()).getListener();
                     if (listener != null) {
                         listener.onClick(mIosSheet);
