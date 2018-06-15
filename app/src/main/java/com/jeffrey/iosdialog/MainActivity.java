@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         .setNegativeButton("取消")
                         .setAutoDismiss(false)
                         .show();
+
                 break;
         }
 
