@@ -11,7 +11,7 @@ allprojects {
  Step 2. Add the dependency
 ```
 dependencies {
-	        implementation 'com.github.XiuwenWang:IOSDialog:V1.0.0'
+	      implementation 'com.github.XiuwenWang:IOSDialog:1.1'
 	}
 ```
 # IOSDialog（仿IOS样式）
