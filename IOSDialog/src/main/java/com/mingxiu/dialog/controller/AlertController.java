@@ -172,18 +172,18 @@ public class AlertController {
 
     private void setPositiveButtonTextSize(float mPositiveButtonTextSize) {
         if (mPositiveButtonTextSize != 0) {
-            mIosAlert.getmTvPosittive().setTextSize(PixelUtils.sp2px(mPositiveButtonTextSize, mIosAlert.getContext()));
+            mIosAlert.getmTvPosittive().setTextSize(mPositiveButtonTextSize);
         }
     }
 
     private void setNegativeButtonTextSize(float mNegativeButtonTextSize) {
         if (mNegativeButtonTextSize != 0) {
-            mIosAlert.getmTvNegative().setTextSize(PixelUtils.sp2px(mNegativeButtonTextSize, mIosAlert.getContext()));
+            mIosAlert.getmTvNegative().setTextSize(mNegativeButtonTextSize);
         }
     }
 
     private void setMessageTextSize(float mMessageTextSize) {
-        mIosAlert.getmMsg().setTextSize(PixelUtils.sp2px(mMessageTextSize, mIosAlert.getContext()));
+        mIosAlert.getmMsg().setTextSize(mMessageTextSize);
     }
 
     private void setTitleTextSize(float mTitleTextSize) {
@@ -286,10 +286,10 @@ public class AlertController {
             }
             dialog.setMessageVisibility(mMessageVisibility);
 
-            dialog.setNegativeButton(isAutoDismiss,mNegativeButtonText, mNegativeButtonTextColor, mNegativeButtonListener);
+            dialog.setNegativeButton(isAutoDismiss, mNegativeButtonText, mNegativeButtonTextColor, mNegativeButtonListener);
             dialog.setNegativeButtonVisibility(mNegativeButtonVisibility);
             dialog.setNegativeButtonTextSize(mNegativeButtonTextSize);
-            dialog.setPositiveButton(isAutoDismiss,mPositiveButtonText, mPositiveButtonTextColor, mPositiveButtonListener);
+            dialog.setPositiveButton(isAutoDismiss, mPositiveButtonText, mPositiveButtonTextColor, mPositiveButtonListener);
             dialog.setPositiveButtonVisibility(mPositiveButtonVisibility);
             dialog.setPositiveButtonTextSize(mPositiveButtonTextSize);
 

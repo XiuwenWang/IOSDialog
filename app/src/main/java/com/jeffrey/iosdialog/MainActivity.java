@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_IOSAlert:
                 new IOSAlert.Builder(this)
                         .setTitle("标题")
-                        .setMessage("消息内容")
+                        .setMessage("消息内容",getResources().getColor(R.color.black),20)
                         .setPositiveButton("确定", new IOSAlert.OnClickListener() {
                             @Override
                             public void onClick(IOSAlert dialog) {
@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
                             }
                         })
                         .setNegativeButton("取消")
-                        .setAutoDismiss(false)
+                        .setAutoDismiss(true)
+                        .setCancelable(false)
                         .show();
                 break;
             case R.id.btn_IOSSheet:
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(int position, IOSSheet dialog) {
                                 //Item 点击回调
-                                dialog.dismiss();
+//                                dialog.dismiss();
                             }
                         })
                         .setNegativeButton("取消")
