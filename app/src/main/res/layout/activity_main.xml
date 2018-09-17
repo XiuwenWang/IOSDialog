@@ -21,5 +21,12 @@
         android:onClick="onClick"
         android:text="IOSSheet"/>
 
+    <Button
+        android:id="@+id/btn_IOSLoad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="IOSLoading"/>
+
 
 </LinearLayout>

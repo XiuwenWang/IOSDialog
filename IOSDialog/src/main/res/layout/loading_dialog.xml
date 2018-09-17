@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/dialog_view"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:minHeight="87dp"
+              android:minWidth="104dp"
+              android:orientation="vertical"
+              android:paddingLeft="35dp"
+              android:paddingRight="35dp"
+              android:paddingBottom="20dp"
+              android:paddingTop="20dp"
+              >
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@mipmap/loading"/>
+
+    <TextView
+        android:id="@+id/tipTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:includeFontPadding="false"
+        android:maxWidth="208dp"
+        android:text="正在登录"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:visibility="gone"/>
+
+</LinearLayout>

@@ -25,4 +25,18 @@
         <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
     </style>
 
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>                               <!--边框-->
+        <item name="android:windowNoTitle">true</item>                              <!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item>                       <!--半透明-->
+        <item name="android:windowBackground">@drawable/progress_dialog_bg</item>   <!--无标题-->
+        <item name="android:windowIsFloating">true</item>                           <!--背景透明-->
+        <item name="android:windowContentOverlay">@null</item>                      <!--模糊-->
+        <item name="android:backgroundDimEnabled">true</item>                       <!--是否显示背景阴暗面-->
+    </style>
+    <!-- PopupWindow中心弹窗的进出动画 -->
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in_center</item>
+        <item name="android:windowExitAnimation">@anim/fade_out_center</item>
+    </style>
 </resources>

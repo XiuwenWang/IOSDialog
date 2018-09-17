@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.mingxiu.dialog.dialog.IOSAlert;
+import com.mingxiu.dialog.dialog.IOSLoad;
 import com.mingxiu.dialog.dialog.IOSSheet;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_IOSAlert:
                 new IOSAlert.Builder(this)
                         .setTitle("标题")
-                        .setMessage("消息内容",getResources().getColor(R.color.black),20)
+                        .setMessage("消息内容")
                         .setPositiveButton("确定", new IOSAlert.OnClickListener() {
                             @Override
                             public void onClick(IOSAlert dialog) {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                         .setTitle("标题")
                         .addSheetItem("0")
                         .addSheetItem(new String[]{"1", "2", "3"})
-                        .addSheetItem("5", Color.RED,15)
+                        .addSheetItem("5", Color.RED, 15)
                         .setOnItemClickListener(new IOSSheet.OnItemClickListener() {
                             @Override
                             public void onClick(int position, IOSSheet dialog) {
@@ -51,6 +52,18 @@ public class MainActivity extends AppCompatActivity {
                         .setNegativeButton("取消")
                         .setAutoDismiss(false)
                         .show();
+
+                break;
+            case R.id.btn_IOSLoad:
+                new IOSLoad.Builder(this)
+                        .setMsg("加载中~")
+                        .show();
+                view.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        IOSLoad.cancelDialog();
+                    }
+                }, 3000);
 
                 break;
         }
