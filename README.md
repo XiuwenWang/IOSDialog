@@ -11,7 +11,7 @@ allprojects {
  Step 2. Add the dependency
 ```
 dependencies {
-	      implementation 'com.github.XiuwenWang:IOSDialog:1.1'
+	      implementation 'com.github.XiuwenWang:IOSDialog:1.3'
 	}
 ```
 # IOSDialog（仿IOS样式）
@@ -47,4 +47,18 @@ dependencies {
              })
              .setNegativeButton("取消")
              .show();
+```
+
+> - ### IOSLoad（加载中）
+使用方法
+```
+     new IOSLoad.Builder(this)
+                        .setMsg("加载中~")
+                        .show();
+                view.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        IOSLoad.cancelDialog();
+                    }
+                }, 3000);
 ```
